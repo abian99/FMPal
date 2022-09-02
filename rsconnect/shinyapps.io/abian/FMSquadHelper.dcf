@@ -1,0 +1,14 @@
+name: FMSquadHelper
+title: FMSquadHelper
+username:
+account: abian
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6884677
+bundleId: 6262009
+url: https://abian.shinyapps.io/FMSquadHelper/
+when: 1662106525.98996
+lastSyncTime: 1662106525.98997
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData
