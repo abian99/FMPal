@@ -34,6 +34,7 @@ ui <- fluidPage(
                    ),
                    tableOutput("files")
                    ,
+                   actionButton("go", "Go"),
                    width = 3
                  ),
                  mainPanel(
@@ -120,43 +121,30 @@ ui <- fluidPage(
                  ),
                  tabPanel("Role Ratings",
                           tags$br(),
-                          sidebarLayout(
-                            sidebarPanel(
-                              selectInput(
-                                "selectPosRating",
-                                h3("Player Visibility"),
-                                choices = list(
-                                  "All" = "All",
-                                  "Current Squad" = "Squad",
-                                  "Loaned" = "Loaned"
-                                ),
-                                selected = "All"
+                          sidebarLayout(sidebarPanel(
+                            radioButtons(
+                              "positionRoleRating",
+                              h3("Select Position"),
+                              choices = list(
+                                "Goalkeepers" = "GK",
+                                "Defenders" = "CD",
+                                "Fullbacks/Wingbacks" = "FB",
+                                "Defensive Midfielders" = "DM",
+                                "Midfielders" = "M",
+                                "Wingers" = "W",
+                                "Attacking Midfielders" = "AM",
+                                "Strikers" = "ST"
                               ),
-                              radioButtons(
-                                "positionPosRating",
-                                h3("Select Position"),
-                                choices = list(
-                                  "All" = "All",
-                                  "Goalkeepers" = "GK",
-                                  "Defenders" = "CD",
-                                  "Fullbacks/Wingbacks" = "FB",
-                                  "Defensive Midfielders" = "DM",
-                                  "Midfielders" = "M",
-                                  "Wingers" = "W",
-                                  "Attacking Midfielders" = "AM",
-                                  "Strikers" = "ST"
-                                ),
-                                selected = "All"
-                              ),
-                              width = 3
+                              selected = "GK"
                             ),
-                            mainPanel(reactableOutput("PositionRatings"))
+                            width = 3
+                          ),
+                          mainPanel(reactableOutput("RoleRatings"))
                           )
-                          )
-               )
+               ))
              )),
-    tabPanel("Staff", ),
-    tabPanel("Scouting", )
+    tabPanel("Staff",),
+    tabPanel("Scouting",)
   ),
   
 )
@@ -189,10 +177,10 @@ server <- function(input, output) {
     team_df <- tableCheck(input$squad_file)
     if (input$select != "All") {
       if (input$select == "Squad") {
-        team_df <- team_df[team_df$Club == 'Chelsea', ]
+        team_df <- team_df[team_df$Club == 'Chelsea',]
       }
       else if (input$select == "Loaned") {
-        team_df <- team_df[team_df$Club != 'Chelsea', ]
+        team_df <- team_df[team_df$Club != 'Chelsea',]
       }
     }
     
@@ -205,7 +193,7 @@ server <- function(input, output) {
       highlight = TRUE,
       resizable = TRUE,
       width = "112.9%",
-      defaultColDef = colDef(align = "center",),
+      defaultColDef = colDef(align = "center", ),
     )
   })
   
@@ -250,13 +238,31 @@ server <- function(input, output) {
       highlight = TRUE,
       resizable = TRUE,
       width = "112.9%",
-      defaultColDef = colDef(align = "center",),
+      defaultColDef = colDef(align = "center", ),
     )
+  })
+  
+  randomVals <- eventReactive(input$go, {
+    input$squad_file <- "CurrentSquad.html"
   })
   
   output$RoleRatings <- renderReactable({
     req(input$squad_file)
-    roleTable(team_df)
+    team_df <- tableCheck(input$squad_file)
+    role_df <- roleCheck(team_df, input$positionRoleRating)
+    colLength <- ncol(role_df)
+    role_df <- role_df[, c(3:4, 8, 107:ncol(role_df))]
+    reactable(
+      role_df,
+      bordered = TRUE,
+      filterable = TRUE,
+      showPageSizeOptions = TRUE,
+      striped = TRUE,
+      highlight = TRUE,
+      resizable = TRUE,
+      width = "112.9%",
+      defaultColDef = colDef(align = "center", ),
+    )
   })
   
   output$instructions <- renderText({
