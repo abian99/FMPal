@@ -379,30 +379,26 @@ tableCheck <- function(inputFile){
   }
 }
 
-GKRoles <- function(team_df){
-  
-}
-
-roleTable <- function(team_df, position){
-  team_df <-
-    switch(
-      input$positionPosRating,
-      "GK" = team_df <-
-        filter(team_df, GKBool == TRUE),
-      "CD" = team_df <-
-        filter(team_df, CDBool == TRUE),
-      "FB" = team_df <-
-        filter(team_df, FBBool == TRUE),
-      "DM" = team_df <-
-        filter(team_df, DMBool == TRUE),
-      "M" = team_df <-
-        filter(team_df, MBool == TRUE),
-      "AM" = team_df <-
-        filter(team_df, AMBool == TRUE),
-      "W" = team_df <-
-        filter(team_df, AMBool == TRUE),
-      "ST" = team_df <- filter(team_df, STBool == TRUE)
-    )
+roleTable <- function(team_df){
+  print(nrow(team_df))
+  # team_df <-
+  #   switch(
+  #     input$positionPosRating,
+  #     "GK" = ,
+  #     "CD" = team_df <-
+  #       filter(team_df, CDBool == TRUE),
+  #     "FB" = team_df <-
+  #       filter(team_df, FBBool == TRUE),
+  #     "DM" = team_df <-
+  #       filter(team_df, DMBool == TRUE),
+  #     "M" = team_df <-
+  #       filter(team_df, MBool == TRUE),
+  #     "AM" = team_df <-
+  #       filter(team_df, AMBool == TRUE),
+  #     "W" = team_df <-
+  #       filter(team_df, AMBool == TRUE),
+  #     "ST" = team_df <- filter(team_df, STBool == TRUE)
+  #   )
 }
 
 # full_squad <-

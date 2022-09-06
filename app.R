@@ -256,26 +256,7 @@ server <- function(input, output) {
   
   output$RoleRatings <- renderReactable({
     req(input$squad_file)
-    team_df <- tableCheck(input$squad_file)
-    if (input$select != "All") {
-      if (input$select == "Squad") {
-        team_df <- team_df[team_df$Club == 'Chelsea', ]
-      }
-      else if (input$select == "Loaned") {
-        team_df <- team_df[team_df$Club != 'Chelsea', ]
-      }
-    }
-    reactable(
-      team_df[, c(3:4, 8, 107, 99:106)],
-      bordered = TRUE,
-      filterable = TRUE,
-      showPageSizeOptions = TRUE,
-      striped = TRUE,
-      highlight = TRUE,
-      resizable = TRUE,
-      width = "112.9%",
-      defaultColDef = colDef(align = "center",),
-    )
+    roleTable(team_df)
   })
   
   output$instructions <- renderText({
