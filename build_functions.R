@@ -391,22 +391,22 @@ roleCheck <- function(team_df, position) {
           sum(Aer, Cmd, Com, Han, Kic, Ref, Pos, Cnt, Agi) / 180
         ) * 3) + ((
           sum(`1v1`, Thr, Ant, Dec) / 80
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
         SK_D = ((((
           sum(Cmd, Kic, `1v1`, Ref, Ant, Cnt, Pos, Agi) / 160
         ) * 3) + ((
           sum(Aer, Com, Fir, Han, Pas, TRO, Thr, Cmp, Dec, Vis, Acc) / 220
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
         SK_S = ((((
           sum(Cmd, Kic, `1v1`, Ref, Ant, Cnt, Pos, Agi, Cmp) / 180
         ) * 3) + ((
           sum(Aer, Com, Fir, Han, Pas, TRO, Thr, Dec, Vis, Acc) / 200
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
         SK_A = ((((
           sum(Cmd, Kic, `1v1`, Ref, Ant, Cnt, Pos, Agi, Cmp) / 180
         ) * 3) + ((
           sum(Aer, Com, Fir, Han, Pas, TRO, Thr, Dec, Vis, Acc, Ecc) / 220
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -419,22 +419,22 @@ roleCheck <- function(team_df, position) {
           sum(Hea, Mar, Pas, Tck, Cmp, Pos, Jum, Str) / 160
         ) * 3) + ((
           sum(Fir, Tec, Agg, Ant, Bra, Cnt, Dec, Vis, Pac) / 180
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
         BPD_S = ((((
           sum(Hea, Pas, Tck, Agg, Bra, Cmp, Dec, Pos, Jum, Str) / 200
         ) * 3) + ((
           sum(Fir, Mar, Tec, Ant, Cnt, Vis) / 120
-        ) * 2)) / 5) *100,
+        ) * 2)) / 5) * 100,
         BPD_C = ((((
           sum(Cnt, Mar, Pas, Tck, Bra, Cmp, Dec, Pos, Str, Pac) / 200
         ) * 3) + ((
           sum(Jum, Hea, Fir, Tec, Ant, Vis) / 120
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
         LIB_S = ((((
           sum(Fir, Mar, Pas, Tck, Ant, Cmp, Cnt, Dec, Pos, Tea, Vis, Pac) / 240
         ) * 3) + ((
           sum(Dri, Hea, Tec, Bra, Fla, Agi, Bal, Jum, Sta, Str) / 200
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
         LIB_A = ((((
           sum(
             Fla,
@@ -454,37 +454,37 @@ roleCheck <- function(team_df, position) {
           ) / 280
         ) * 3) + ((
           sum(Acc, Lon, Hea, Tec, Bra, Agi, Bal, Jum, Sta, Str) / 200
-        ) * 2)) / 5)*100,
+        ) * 2)) / 5) * 100,
         CD_D = (((
           sum(Hea, Mar, Tck, Pos, Jum, Str) / 120
         ) * 3) + ((
           sum(Agg, Ant, Bra, Cmp, Cnt, Dec, Pac) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CD_S = (((
           sum(Hea, Tck, Agg, Bra, Dec, Pos, Jum, Str) / 160
         ) * 3) + ((
           sum(Mar, Ant, Cmp, Cnt) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CD_C = (((
           sum(Mar, Tck, Ant, Cnt, Dec, Pos, Pac) / 140
         ) * 3) + ((
           sum(Hea, Bra, Cmp, Jum, Sta) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         NCB_D = (((
           sum(Hea, Mar, Tck, Pos, Jum, Str) / 120
         ) * 3) + ((
           sum(Agg, Ant, Bra, Cnt, Pac) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         NCB_S = (((
           sum(Hea, Tck, Agg, Bra, Pos, Jum, Str) / 140
         ) * 3) + ((
           sum(Mar, Ant, Cnt) / 60
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         NCB_C = (((
           sum(Hea, Tck, Agg, Bra, Pos, Jum, Str) / 140
         ) * 3) + ((
           sum(Mar, Ant, Cnt) / 60
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -497,62 +497,62 @@ roleCheck <- function(team_df, position) {
           sum(Cro, Dri, Fir, Pas, Tec, Dec, OtB, Tea, Wor, Acc, Pac, Sta) / 240
         ) * 3) + ((
           sum(Tck, Ant, Cmp, Fla, Agi, Bal) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CWB_A = (((
           sum(Fla, Cro, Dri, Fir, Pas, Tec, Dec, OtB, Tea, Wor, Acc, Pac, Sta) / 260
         ) * 3) + ((
           sum(Tck, Ant, Cmp, Agi, Bal) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WB_D = (((
           sum(Mar, Tck, Ant, Pos, Tea, Wor, Acc, Sta) / 160
         ) * 3) + ((
           sum(Cro, Dri, Fir, Pas, Tec, Cnt, Dec, OtB, Agi, Pac) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WB_S = (((
           sum(Cro, Dri, Mar, Tck, OtB, Tea, Wor, Acc, Sta) / 180
         ) * 3) + ((
           sum(Fir, Pas, Tec, Ant, Cnt, Dec, Pos, Agi, Pac) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WB_A = (((
           sum(Cro, Dri, Tck, Tec, OtB, Tea, Wor, Acc, Pac, Sta) / 200
         ) * 3) + ((
           sum(Fir, Pas, Mar, Ant, Cnt, Dec, Fla, Pos, Agi) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         FB_D = (((
           sum(Mar, Tck, Ant, Cnt, Pos) / 100
         ) * 3) + ((
           sum(Cro, Pas, Cmp, Dec, Tea, Pac, Sta) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         FB_S = (((
           sum(Mar, Tck, Ant, Cnt, Pos, Wor) / 120
         ) * 3) + ((
           sum(Cro, Pas, Cmp, Dec, Tea, Pac, Sta, Dri, Tec) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         FB_A = (((
           sum(Cro, Tck, Ant, Pos, Tea, Wor, Pac, Sta) / 160
         ) * 3) + ((
           sum(Dri, Fir, Pas, Tec, Cmp, Cnt, Dec, OtB, Acc, Agi) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         NFB_D = (((
           sum(Mar, Tck, Ant, Pos, Str) / 100
         ) * 3) + ((
           sum(Hea, Agg, Bra, Cnt, Tea) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         IWB_D = (((
           sum(Mar, Pas, Tck, Ant, Dec, Pos, Tea, Wor) / 160
         ) * 3) + ((
           sum(Dri, Fir, Tec, Cnt, OtB, Acc, Agi, Sta) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         IWB_S = (((
           sum(Mar, Pas, Tck, Dec, OtB, Wor, Sta) / 140
         ) * 3) + ((
           sum(Dri, Fir, Tec, Ant, Cmp, Cnt, Pos, Acc, Agi) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         IWB_A = (((
           sum(Dri, Mar, Pas, Tck, Tec, Dec, OtB, Tea, Wor, Acc, Sta) / 220
         ) * 3) + ((
           sum(Fir, Lon, Ant, Cmp, Cnt, Fla, Pos, Agi, Pac) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -565,62 +565,62 @@ roleCheck <- function(team_df, position) {
           sum(Fir, Pas, Tec, Cmp, Dec, Tea, Vis, Wor) / 160
         ) * 3) + ((
           sum(Tck, Ant, Pos, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DLP_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, Tea, Vis) / 140
         ) * 3) + ((
           sum(OtB, Ant, Pos, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         SGV_S = (((
           sum(Mar, Pas, Tck, OtB, Pos, Wor, Pac, Sta) / 160
         ) * 3) + ((
           sum(Fin, Fir, Lon, Ant, Cmp, Cnt, Dec, Acc, Bal, Str) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         SGV_A = (((
           sum(Fin, Lon, Pas, Tck, Ant, OtB, Pos, Wor, Pac, Sta) / 200
         ) * 3) + ((
           sum(Fir, Mar, Cmp, Cnt, Dec, Acc, Bal, Str) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DM_D = (((
           sum(Tck, Ant, Cnt, Pos, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Mar, Pas, Agg, Cmp, Dec, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DM_S = (((
           sum(Tck, Ant, Cnt, Pos, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Mar, Pas, Agg, Cmp, Dec, Str, Fir) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         HB_D = (((
           sum(Mar, Tck, Ant, Cnt, Pos, Tea, Wor, Sta) / 160
         ) * 3) + ((
           sum(Hea, Pas, Agg, Bra, Cmp, Dec, Jum, Str) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AM_D = (((
           sum(Mar, Tck, Ant, Cnt, Dec, Pos) / 120
         ) * 3) + ((
           sum(Cmp, Tea, Str) / 60
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         BWM_D = (((
           sum(Tck, Agg, Ant, Bra, Tea, Wor) / 120
         ) * 3) + ((
           sum(Mar, Cnt, Pos, Agi, Pac, Sta, Str) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         BWM_S = (((
           sum(Tck, Agg, Ant, Bra, Tea, Wor, Pas) / 140
         ) * 3) + ((
           sum(Mar, Cnt, Agi, Pac, Sta, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         RPM_S = (((
           sum(Fir, Pas, Tec, Ant, Cmp, Dec, OtB, Tea, Vis, Wor, Acc, Sta) / 240
         ) * 3) + ((
           sum(Dri, Lon, Cnt, Pos, Agi, Bal, Pac) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         REG_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, Fla, OtB, Tea, Vis) / 180
         ) * 3) + ((
           sum(Dri, Lon, Ant, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         BTB_S = (((
           sum(Pas, Tck, OtB, Tea, Wor, Sta) / 120
         ) * 3) + ((
@@ -640,47 +640,47 @@ roleCheck <- function(team_df, position) {
             Pac,
             Str
           ) / 280
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CM_D = (((
           sum(Tck, Cnt, Dec, Pos, Tea) / 100
         ) * 3) + ((
           sum(Fir, Mar, Pas, Tec, Agg, Ant, Cmp, Wor, Sta) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CM_S = (((
           sum(Fir, Pas, Tck, Dec, Tea) / 100
         ) * 3) + ((
           sum(Tec, Ant, Cmp, Cnt, OtB, Vis, Wor, Sta) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CM_A = (((
           sum(Fir, Pas, Dec, OtB) / 80
         ) * 3) + ((
           sum(Lon, Tck, Tec, Ant, Cmp, Tea, Vis, Wor, Acc, Sta) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CAR_S = (((
           sum(Pas, Tck, Dec, Pos, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Fir, Tec, Ant, Cmp, Cnt, OtB, Vis) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AP_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, OtB, Tea, Vis) / 160
         ) * 3) + ((
           sum(Dri, Ant, Fla, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AP_A = (((
           sum(Dri, Fir, Pas, Tec, Cmp, Dec, OtB, Tea, Vis) / 180
         ) * 3) + ((
           sum(Acc, Ant, Fla, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         MEZ_S = (((
           sum(Pas, Tec, Dec, OtB, Wor, Acc) / 120
         ) * 3) + ((
           sum(Dri, Fir, Lon, Tck, Ant, Cmp, Vis, Bal, Sta) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         MEZ_A = (((
           sum(Pas, Tec, Dec, OtB, Wor, Acc) / 120
         ) * 3) + ((
           sum(Dri, Fir, Lon, Tck, Ant, Cmp, Vis, Bal, Sta, Fin, Fla) / 220
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -693,62 +693,62 @@ roleCheck <- function(team_df, position) {
           sum(Fir, Pas, Tec, Cmp, Dec, Tea, Vis, Wor) / 160
         ) * 3) + ((
           sum(Tck, Ant, Pos, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DLP_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, Tea, Vis) / 140
         ) * 3) + ((
           sum(OtB, Ant, Pos, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         SGV_S = (((
           sum(Mar, Pas, Tck, OtB, Pos, Wor, Pac, Sta) / 160
         ) * 3) + ((
           sum(Fin, Fir, Lon, Ant, Cmp, Cnt, Dec, Acc, Bal, Str) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         SGV_A = (((
           sum(Fin, Lon, Pas, Tck, Ant, OtB, Pos, Wor, Pac, Sta) / 200
         ) * 3) + ((
           sum(Fir, Mar, Cmp, Cnt, Dec, Acc, Bal, Str) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DM_D = (((
           sum(Tck, Ant, Cnt, Pos, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Mar, Pas, Agg, Cmp, Dec, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DM_S = (((
           sum(Tck, Ant, Cnt, Pos, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Mar, Pas, Agg, Cmp, Dec, Str, Fir) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         HB_D = (((
           sum(Mar, Tck, Ant, Cnt, Pos, Tea, Wor, Sta) / 160
         ) * 3) + ((
           sum(Hea, Pas, Agg, Bra, Cmp, Dec, Jum, Str) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AM_D = (((
           sum(Mar, Tck, Ant, Cnt, Dec, Pos) / 120
         ) * 3) + ((
           sum(Cmp, Tea, Str) / 60
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         BWM_D = (((
           sum(Tck, Agg, Ant, Bra, Tea, Wor) / 120
         ) * 3) + ((
           sum(Mar, Cnt, Pos, Agi, Pac, Sta, Str) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         BWM_S = (((
           sum(Tck, Agg, Ant, Bra, Tea, Wor, Pas) / 140
         ) * 3) + ((
           sum(Mar, Cnt, Agi, Pac, Sta, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         RPM_S = (((
           sum(Fir, Pas, Tec, Ant, Cmp, Dec, OtB, Tea, Vis, Wor, Acc, Sta) / 240
         ) * 3) + ((
           sum(Dri, Lon, Cnt, Pos, Agi, Bal, Pac) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         REG_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, Fla, OtB, Tea, Vis) / 180
         ) * 3) + ((
           sum(Dri, Lon, Ant, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         BTB_S = (((
           sum(Pas, Tck, OtB, Tea, Wor, Sta) / 120
         ) * 3) + ((
@@ -768,47 +768,47 @@ roleCheck <- function(team_df, position) {
             Pac,
             Str
           ) / 280
-        ) * 2)) / 5,
+        ) * 2)) / 5 * 100,
         CM_D = (((
           sum(Tck, Cnt, Dec, Pos, Tea) / 100
         ) * 3) + ((
           sum(Fir, Mar, Pas, Tec, Agg, Ant, Cmp, Wor, Sta) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CM_S = (((
           sum(Fir, Pas, Tck, Dec, Tea) / 100
         ) * 3) + ((
           sum(Tec, Ant, Cmp, Cnt, OtB, Vis, Wor, Sta) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CM_A = (((
           sum(Fir, Pas, Dec, OtB) / 80
         ) * 3) + ((
           sum(Lon, Tck, Tec, Ant, Cmp, Tea, Vis, Wor, Acc, Sta) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CAR_S = (((
           sum(Pas, Tck, Dec, Pos, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Fir, Tec, Ant, Cmp, Cnt, OtB, Vis) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AP_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, OtB, Tea, Vis) / 160
         ) * 3) + ((
           sum(Dri, Ant, Fla, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AP_A = (((
           sum(Dri, Fir, Pas, Tec, Cmp, Dec, OtB, Tea, Vis) / 180
         ) * 3) + ((
           sum(Acc, Ant, Fla, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         MEZ_S = (((
           sum(Pas, Tec, Dec, OtB, Wor, Acc) / 120
         ) * 3) + ((
           sum(Dri, Fir, Lon, Tck, Ant, Cmp, Vis, Bal, Sta) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         MEZ_A = (((
           sum(Pas, Tec, Dec, OtB, Wor, Acc) / 120
         ) * 3) + ((
           sum(Dri, Fir, Lon, Tck, Ant, Cmp, Vis, Bal, Sta, Fin, Fla) / 220
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -821,82 +821,82 @@ roleCheck <- function(team_df, position) {
           sum(Dri, Pas, Tec, OtB, Acc) / 100
         ) * 3) + ((
           sum(Cro, Fir, Lon, Cmp, Dec, Vis, Wor, Agi, Pac, Sta) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         IW_A = (((
           sum(Dri, Pas, Tec, OtB, Acc, Agi) / 120
         ) * 3) + ((
           sum(Cro, Fir, Lon, Ant, Cmp, Dec, Fla, Vis, Pac) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WP_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, Tea, Vis) / 140
         ) * 3) + ((
           sum(Dri, OtB, Agi) / 60
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WP_A = (((
           sum(Dri, Fir, Pas, Tec, Cmp, Dec, OtB, Tea, Vis) / 180
         ) * 3) + ((
           sum(Ant, Fla, Acc, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DW_D = (((
           sum(Tec, Ant, OtB, Pos, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Cro, Dri, Fir, Mar, Tck, Agg, Cnt, Dec, Acc) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DW_S = (((
           sum(Cro, Tec, OtB, Tea, Wor, Sta) / 120
         ) * 3) + ((
           sum(Dri, Fir, Mar, Pas, Tck, Agg, Ant, Cmp, Cnt, Dec, Pos, Acc) / 240
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WM_D = (((
           sum(Pas, Tck, Cnt, Dec, Pos, Tea, Wor) / 140
         ) * 3) + ((
           sum(Cro, Fir, Mar, Tec, Ant, Cmp, Sta) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WM_S = (((
           sum(Pas, Tck, Dec, Tea, Wor, Sta) / 120
         ) * 3) + ((
           sum(Cro, Fir, Tec, Ant, Cmp, Cnt, OtB, Pos, Vis) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WM_A = (((
           sum(Cro, Fir, Pas, Dec, Tea, Wor, Sta) / 140
         ) * 3) + ((
           sum(Tck, Tec, Ant, Cmp, OtB, Vis) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         W_S = (((
           sum(Cro, Dri, Tec, OtB, Acc, Pac) / 120
         ) * 3) + ((
           sum(Fir, Pas, Wor, Agi, Sta) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         W_A = (((
           sum(Cro, Dri, Tec, OtB, Acc, Pac) / 120
         ) * 3) + ((
           sum(Fir, Pas, Ant, Fla, Agi) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         IF_S = (((
           sum(Dri, Fir, Pas, Tec, OtB, Acc, Agi, Bal) / 160
         ) * 3) + ((
           sum(Fin, Lon, Ant, Cmp, Fla, Vis, Pac) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         IF_A = (((
           sum(Dri, Fin, Fir, Tec, OtB, Acc, Agi, Bal) / 160
         ) * 3) + ((
           sum(Lon, Pas, Ant, Cmp, Fla, Pac) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         RMD_A = (((
           sum(Fin, Ant, Cmp, Cnt, Dec, OtB, Bal) / 140
         ) * 3) + ((
           sum(Fir, Tec, Wor, Acc, Sta) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WTM_S = (((
           sum(Hea, Bra, Tea, Jum, Str) / 100
         ) * 3) + ((
           sum(Cro, Fir, Ant, OtB, Wor, Bal, Sta) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         WTM_A = (((
           sum(OtB, Hea, Bra, Jum, Str) / 100
         ) * 3) + ((
           sum(Tea, Cro, Fir, Ant, Wor, Bal, Sta, Fin) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -909,47 +909,47 @@ roleCheck <- function(team_df, position) {
           sum(Dri, Fin, Fir, Ant, Cmp, OtB, Acc) / 140
         ) * 3) + ((
           sum(Pas, Tec, Cnt, Dec, Wor, Agi, Bal, Pac, Sta) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AM_S = (((
           sum(Fir, Lon, Pas, Tec, Ant, Dec, Fla, OtB) / 160
         ) * 3) + ((
           sum(Dri, Cmp, Vis, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AM_A = (((
           sum(Dri, Fir, Lon, Pas, Tec, Ant, Dec, Fla, OtB) / 180
         ) * 3) + ((
           sum(Fin, Cmp, Vis, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         ENG_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, Vis) / 120
         ) * 3) + ((
           sum(Ant, Fla, OtB, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         TRQ_A = (((
           sum(Dri, Fir, Pas, Tec, Cmp, Dec, Fla, OtB, Vis, Acc) / 200
         ) * 3) + ((
           sum(Fin, Ant, Agi, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AF_A = (((
           sum(Dri, Fin, Fir, Tec, Cmp, OtB, Acc) / 140
         ) * 3) + ((
           sum(Pas, Ant, Dec, Wor, Agi, Bal, Pac, Sta) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         FN_S = (((
           sum(Dri, Fir, Pas, Tec, Cmp, Dec, OtB, Vis, Acc, Agi) / 200
         ) * 3) + ((
           sum(Fin, Ant, Fla, Tea, Bal) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DLF_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, OtB, Tea) / 140
         ) * 3) + ((
           sum(Fin, Ant, Fla, Vis, Bal, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DLF_A = (((
           sum(Fir, Pas, Tec, Cmp, Dec, OtB, Tea) / 140
         ) * 3) + ((
           sum(Fin, Ant, Fla, Vis, Bal, Str, Dri) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CF_S = (((
           sum(
             Dri,
@@ -969,42 +969,42 @@ roleCheck <- function(team_df, position) {
           ) / 280
         ) * 3) + ((
           sum(Fin, Tea, Wor, Bal, Jum, Pac, Sta) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CF_A = (((
           sum(Dri, Fin, Fir, Hea, Tec, Ant, Cmp, OtB, Acc, Agi, Str) / 220
         ) * 3) + ((
           sum(Lon, Pas, Dec, Tea, Vis, Wor, Bal, Jum, Pac, Sta) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PF_D = (((
           sum(Agg, Ant, Bra, Dec, Tea, Vis, Acc, Pac, Sta) / 180
         ) * 3) + ((
           sum(Fir, Cmp, Cnt, Agi, Bal, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PF_S = (((
           sum(Agg, Ant, Bra, Dec, Tea, Vis, Acc, Pac, Sta) / 180
         ) * 3) + ((
           sum(Fir, Cmp, Cnt, Agi, Bal, Str, OtB, Pas) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PF_A = (((
           sum(Agg, Ant, Bra, OtB, Tea, Wor, Acc, Pac, Sta) / 180
         ) * 3) + ((
           sum(Fin, Fir, Cmp, Cnt, Dec, Agi, Bal, Str) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PCH_A = (((
           sum(Fin, Ant, Cmp, OtB) / 80
         ) * 3) + ((
           sum(Fir, Hea, Tec, Dec, Acc) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         TM_S = (((
           sum(Hea, Bra, Tea, Bal, Jum, Str) / 120
         ) * 3) + ((
           sum(Fin, Fir, Agg, Ant, Cmp, Dec, OtB) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         TM_A = (((
           sum(Fin, Hea, Bra, Cmp, OtB, Bal, Jum, Str) / 160
         ) * 3) + ((
           sum(Fir, Agg, Ant, Det, Tea) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -1017,47 +1017,47 @@ roleCheck <- function(team_df, position) {
           sum(Dri, Fin, Fir, Ant, Cmp, OtB, Acc) / 140
         ) * 3) + ((
           sum(Pas, Tec, Cnt, Dec, Wor, Agi, Bal, Pac, Sta) / 180
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AM_S = (((
           sum(Fir, Lon, Pas, Tec, Ant, Dec, Fla, OtB) / 160
         ) * 3) + ((
           sum(Dri, Cmp, Vis, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AM_A = (((
           sum(Dri, Fir, Lon, Pas, Tec, Ant, Dec, Fla, OtB) / 180
         ) * 3) + ((
           sum(Fin, Cmp, Vis, Agi) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         ENG_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, Vis) / 120
         ) * 3) + ((
           sum(Ant, Fla, OtB, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         TRQ_A = (((
           sum(Dri, Fir, Pas, Tec, Cmp, Dec, Fla, OtB, Vis, Acc) / 200
         ) * 3) + ((
           sum(Fin, Ant, Agi, Bal) / 80
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         AF_A = (((
           sum(Dri, Fin, Fir, Tec, Cmp, OtB, Acc) / 140
         ) * 3) + ((
           sum(Pas, Ant, Dec, Wor, Agi, Bal, Pac, Sta) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         FN_S = (((
           sum(Dri, Fir, Pas, Tec, Cmp, Dec, OtB, Vis, Acc, Agi) / 200
         ) * 3) + ((
           sum(Fin, Ant, Fla, Tea, Bal) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DLF_S = (((
           sum(Fir, Pas, Tec, Cmp, Dec, OtB, Tea) / 140
         ) * 3) + ((
           sum(Fin, Ant, Fla, Vis, Bal, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         DLF_A = (((
           sum(Fir, Pas, Tec, Cmp, Dec, OtB, Tea) / 140
         ) * 3) + ((
           sum(Fin, Ant, Fla, Vis, Bal, Str, Dri) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CF_S = (((
           sum(
             Dri,
@@ -1077,42 +1077,42 @@ roleCheck <- function(team_df, position) {
           ) / 280
         ) * 3) + ((
           sum(Fin, Tea, Wor, Bal, Jum, Pac, Sta) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         CF_A = (((
           sum(Dri, Fin, Fir, Hea, Tec, Ant, Cmp, OtB, Acc, Agi, Str) / 220
         ) * 3) + ((
           sum(Lon, Pas, Dec, Tea, Vis, Wor, Bal, Jum, Pac, Sta) / 200
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PF_D = (((
           sum(Agg, Ant, Bra, Dec, Tea, Vis, Acc, Pac, Sta) / 180
         ) * 3) + ((
           sum(Fir, Cmp, Cnt, Agi, Bal, Str) / 120
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PF_S = (((
           sum(Agg, Ant, Bra, Dec, Tea, Vis, Acc, Pac, Sta) / 180
         ) * 3) + ((
           sum(Fir, Cmp, Cnt, Agi, Bal, Str, OtB, Pas) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PF_A = (((
           sum(Agg, Ant, Bra, OtB, Tea, Wor, Acc, Pac, Sta) / 180
         ) * 3) + ((
           sum(Fin, Fir, Cmp, Cnt, Dec, Agi, Bal, Str) / 160
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         PCH_A = (((
           sum(Fin, Ant, Cmp, OtB) / 80
         ) * 3) + ((
           sum(Fir, Hea, Tec, Dec, Acc) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         TM_S = (((
           sum(Hea, Bra, Tea, Bal, Jum, Str) / 120
         ) * 3) + ((
           sum(Fin, Fir, Agg, Ant, Cmp, Dec, OtB) / 140
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
         TM_A = (((
           sum(Fin, Hea, Bra, Cmp, OtB, Bal, Jum, Str) / 160
         ) * 3) + ((
           sum(Fir, Agg, Ant, Det, Tea) / 100
-        ) * 2)) / 5*100,
+        ) * 2)) / 5 * 100,
       ) %>%                   # Using dplyr functions
       mutate_if(is.numeric,
                 round,
@@ -1130,6 +1130,52 @@ roleCheck <- function(team_df, position) {
     "ST" = STRoles
   )
   
+  
+  
+}
+
+radarFormula <- function(team_df, name) {
+  player_row <- filter(team_df, Name %in% name)[, 2:48]
+  if (position != "GK") {
+    radar_row <- player_row[1]
+    radar_row$Intelligence <-
+      ((player_row$Ant + player_row$Dec + player_row$Tea) + (player_row$Fla  + player_row$Vis) *
+         0.5
+      ) /4
+    radar_row$Creativity <-
+      ((player_row$Ant + player_row$Fla  + player_row$Vis) + (player_row$Dec + player_row$Tea) * 0.5
+      ) /4
+    radar_row$Movement <-
+      ((player_row$Ant + player_row$Dec + player_row$Tea) + (player_row$OtB + player_row$Pos) * 0.5
+      ) /4
+    radar_row$Awareness <-
+      ((player_row$Ant + player_row$Tea + player_row$Vis)
+      ) /3
+    radar_row$DecisionMaking <-
+      ((player_row$Dec + player_row$Fla + player_row$Tea)
+      ) /3
+    radar_row$Focus <-
+      ((player_row$Cmp + player_row$Cnt)
+      ) /2
+    radar_row$Endeavour <-
+      ((player_row$Agg + player_row$Bra + player_row$Det + player_row$Wor)
+      ) /4
+    radar_row$PhyPresence <-
+      (((player_row$Agg + player_row$Bra + player_row$Det + player_row$Wor + player_row$Ant) *0.5 + player_row$Bal + player_row$Str)
+      ) /4.5
+    radar_row$AirPresence <-
+      (((player_row$Agg + player_row$Bra + player_row$Det + player_row$Wor + player_row$Ant) *0.5 + player_row$Bal + player_row$Str)
+      ) /4.5
+    radar_row$Mobility <-
+      (((player_row$Det + player_row$Wor + player_row$Bal + player_row$Str + player_row$Dec) *0.5 + player_row$Acc + player_row$Agi + player_row$Pac)
+      ) /5.5
+    radar_row$OffTheBall <-
+      (((player_row$Ant + player_row$Dec + player_row$Tea + player_row$Cmp + player_row$Con + player_row$Det + player_row$Vis + player_row$Wor) *0.5 + player_row$OtB + player_row$Cmp)
+      ) /6
+    radar_row$Control <-
+      (((player_row$Ant + player_row$Dec + player_row$Tea + player_row$Cmp + player_row$Con + player_row$Det + player_row$Vis + player_row$Wor) *0.5 + player_row$Acc + player_row$Agi + player_row$Pac)
+      ) /5.5
+  }
 }
 
 # full_squad <-
