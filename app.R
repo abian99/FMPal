@@ -165,9 +165,7 @@ ui <- fluidPage(
                  #   )
                  # )
                )
-             )),
-    tabPanel("Staff",),
-    tabPanel("Scouting",)
+             ))
   ),
   
 )
